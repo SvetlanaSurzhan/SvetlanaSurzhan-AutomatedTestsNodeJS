@@ -1,0 +1,13 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "project to learn node.js",
+  "repository": {},
+  "main": "app.js",
+  "scripts": {
+    "test": "\"node test.js\"",
+    "start": "\"node src/app.js\""
+  },
+  "author": "Lana",
+  "license": "ISC"
+}
