@@ -1,15 +1,20 @@
-function Greetings(name) {
-    console.log('Hi ' + name);
-}
-Greetings('Sveta');
+// Camel Notation oneTwoThree
+// Pascal Notation OneTwoThree
 
-function Reminder(question) {
-    console.log(question);
+function fizzBuzz(number) {
+    if (((number % 3) == 0 && (number % 5)) === 0){
+        return('fizzBuzz');
+    }
+    else if ((number % 5) === 0){
+        return('buzz');
+    }
+    else if((number % 3) === 0){
+        return('fizz');
+    }
+    else{
+        return number;
+    } 
 }
-Reminder('Do you remamber what is Node.js?????');
+console.log(fizzBuzz(7));
 
-function Answer(paragraph) {
-   console.log(paragraph); 
-}
-Answer('Node is a runtime environment that allows developers to execute JavaScript code outside the browser, on the server-side.');
 
