@@ -1,4 +1,4 @@
-const fizzBuzz = require('../src/app')
+const fizzBuzz = require('./jasmine/jasmine-standalone-4.4.0/src/app')
 
 function testFizzBuzz() {
     if (fizzBuzz(3) === 'fizz') {
