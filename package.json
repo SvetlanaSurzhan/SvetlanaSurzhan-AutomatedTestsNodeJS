@@ -5,9 +5,12 @@
   "repository": {},
   "main": "app.js",
   "scripts": {
-    "test": "\"node test.js\"",
+    "test": "jasmine",
     "start": "\"node src/app.js\""
   },
   "author": "Lana",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^4.4.0"
+  }
 }
