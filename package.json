@@ -11,6 +11,8 @@
   "author": "Lana",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^4.4.0"
+    "jasmine": "^4.4.0",
+    "prettier": "2.7.1",
+    "prettier-plugin-apex": "1.10.0"
   }
 }
