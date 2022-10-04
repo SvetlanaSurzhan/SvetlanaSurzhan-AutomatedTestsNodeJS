@@ -1,22 +1,17 @@
-// function fizzBuzz(number) {
-//     if (((number % 3) === 0 && (number % 5)) === 0){
-//         return('fizzBuzz');
-//     }
-//     else if ((number % 5) === 0){
-//         return('buzz');
-//     }
-//     else if((number % 3) === 0){
-//         return('fizz');
-//     }
-//     else{
-//         return number;
-//     } 
-// }
-
-// function sumOfnumbers(a,b) {
-//     return a + b
-// }
-// console.log(sumOfnumbers(2,5));
+function fizzBuzz(number) {
+    if (((number % 3) === 0 && (number % 5)) === 0){
+        return('fizzBuzz');
+    }
+    else if ((number % 5) === 0){
+        return('buzz');
+    }
+    else if((number % 3) === 0){
+        return('fizz');
+    }
+    else{
+        return number;
+    } 
+}
 
 const cityArray = [
     {
@@ -49,12 +44,12 @@ const cityArray = [
     }
 ];
 
-function filteredCityNames(array){
+function lowTempCityNames(array, temp){
     return array.filter((city) =>{
-        return city.temperature <= 50 
+        return city.temperature <= temp
     }).map((city)=>{
         return city.name
-     }).join()
+     }).join(', ')
 };   
-console.log(filteredCityNames(cityArray));
+module.exports = { lowTempCityNames,  cityArray };
 
