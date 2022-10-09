@@ -44,25 +44,24 @@ const cityArray = [
     }
 ];
 
+// function lowTempCityNames(array, temp) {
+//     return array.filter((city) => {
+//         return city.temperature <= temp
+//     }).map((city) => {
+//         return city.name
+//     }).join(', ')
+// };
+
 function lowTempCityNames(array, temp) {
-    return array.filter((city) => {
+    const newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        newArray.push(array[i]);
+    }
+    return newArray.filter((city) => {
         return city.temperature <= temp
     }).map((city) => {
         return city.name
     }).join(', ')
-};
+}
+console.log(lowTempCityNames(cityArray, 50));
 module.exports = { lowTempCityNames };
-
-// console.log(cityArray);
-// function lowTempCityNames(array, temp) {
-//     for (let i = 0; i <= array.length; i++) {
-//         const newArray = array[i];
-//         if (newArray.temperature <= temp) {
-//             return newArray
-//         }
-//     }
-//     newArray.map((city) => {
-//         return city.name
-//     }).joing(', ')
-// }
-// console.log(lowTempCityNames(cityArray, 50));
