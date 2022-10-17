@@ -1,6 +1,6 @@
-const { lowTempCityNames } = require("../src/app")
-// Valid Boundary Conditions : 49, 50
-// Invalid Boundary Conditions : 51
+const { lowTempCityNames } = require("../src/app");
+// Valid Boundary Conditions: 49, 50
+// Invalid Boundary Conditions: 51
 const cityArray = [
     {
         "name": "Louisville",
@@ -23,6 +23,3 @@ describe(lowTempCityNames, () => {
         expect(actual).toBe(expected);
     });
 });
-
-
-

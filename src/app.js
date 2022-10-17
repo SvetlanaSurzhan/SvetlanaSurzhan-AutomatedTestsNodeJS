@@ -66,22 +66,18 @@
 // console.log(lowTempCityNames(cityArray, 50));
 // module.exports = { lowTempCityNames };
 
-console.log('Start');
 // Async callback function
 function someAsyncFunction(a, b, callback) {
     console.log("FIRED API REQUEST AND IT WILL GO FOR 5 sec");
     setTimeout(() => {
         console.log("RECEIVED DATA a and b");
-        const c = a * 10;
-        const d = b * 10;
-
-        callback(c, d);
+        callback(a, b);
     }, 5000);
 }
 
-someAsyncFunction(12, 10, (c, d) => {
-    console.log("DO STUFF WITH RECEVIED VALUES", c, d)
-    console.log(c + d);
-});
+// someAsyncFunction(5, 25, (a, b) => {
+//     console.log("DO STUFF WITH RECEVIED VALUES", a, b)
+//     console.log(a + b);
+// });
 
-console.log('Finish');
+module.exports = { someAsyncFunction };
