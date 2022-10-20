@@ -66,18 +66,35 @@
 // console.log(lowTempCityNames(cityArray, 50));
 // module.exports = { lowTempCityNames };
 
-// Async callback function
-function someAsyncFunction(a, b, callback) {
-    console.log("FIRED API REQUEST AND IT WILL GO FOR 5 sec");
-    setTimeout(() => {
-        console.log("RECEIVED DATA a and b");
-        callback(a, b);
-    }, 5000);
+// // Async callback function
+// // function sum(a, b) {
+// //     return (a + b);
+// // }
+// //cb(a: number, b: number): a = 10, b = 21
+// function someAsyncFunction(a, b, cb) {
+//     console.log("FIRED API REQUEST AND IT WILL GO FOR 5 sec");
+//     setTimeout(() => {
+//         console.log("RECEIVED DATA a and b");
+//         return cb(a, b);
+//     }, 2000);
+// };
+// // someAsyncFunction(10, 21, sum => {
+// //     console.log(sum);
+// // });
+// module.exports = { someAsyncFunction };
+
+function someOtherFunction(callBack) {
+    callBack()
+}
+function someFunction(cb) {
+    someOtherFunction(() => {
+        return cb(3)
+    })
 }
 
-// someAsyncFunction(5, 25, (a, b) => {
-//     console.log("DO STUFF WITH RECEVIED VALUES", a, b)
-//     console.log(a + b);
-// });
+function callback(a) {
+    return a;
+}
 
-module.exports = { someAsyncFunction };
+const result = someFunction(callback);
+console.log(result)
