@@ -1,3 +1,4 @@
+// // Fizz Buzz task:
 // function fizzBuzz(number) {
 //     if (((number % 3) === 0 && (number % 5)) === 0) {
 //         return ('fizzBuzz');
@@ -43,6 +44,7 @@
 //         "temperature": 32
 //     }
 // ];
+// // Filter Erray with for loop:
 
 // // function lowTempCityNames(array, temp) {
 // //     return array.filter((city) => {
@@ -66,7 +68,7 @@
 // console.log(lowTempCityNames(cityArray, 50));
 // module.exports = { lowTempCityNames };
 
-// // Async callback function
+// // Async callback function:
 // // function sum(a, b) {
 // //     return (a + b);
 // // }
@@ -83,18 +85,32 @@
 // // });
 // module.exports = { someAsyncFunction };
 
-function someOtherFunction(callBack) {
-    callBack()
-}
-function someFunction(cb) {
-    someOtherFunction(() => {
-        return cb(3)
-    })
-}
+// function someOtherFunction(callBack) {
+//     return callBack();
+// }
+// function someFunction(somecb) {
+//     return somecb(arguments[1], arguments[2]);
+// }
 
-function callback(a) {
-    return a;
-}
+// function cb(a, b) {
+//     return a - b;
+// }
 
-const result = someFunction(callback);
-console.log(result)
+// const result = someFunction(cb, 11, 2);
+// console.log(result);
+
+// Promeses:
+
+function someAsyncFunction(a, b) {
+    return new Promise((res, rej) => {
+        console.log("FIRED API REQUEST AND IT WILL GO FOR 5 sec");
+        setTimeout(() => {
+            console.log("RECEIVED DATA a and b");
+            res(a, b);
+        }, 2000);
+    });
+};
+
+const result = someAsyncFunction(4, 6);
+console.log(result);
+// module.exports = { someAsyncFunction };
