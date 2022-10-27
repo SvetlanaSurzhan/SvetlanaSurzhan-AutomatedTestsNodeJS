@@ -106,11 +106,18 @@ function someAsyncFunction(a, b) {
         console.log("FIRED API REQUEST AND IT WILL GO FOR 5 sec");
         setTimeout(() => {
             console.log("RECEIVED DATA a and b");
-            res(a, b);
+            res({
+                num1: a,
+                num2: b
+            });
         }, 2000);
     });
 };
 
-const result = someAsyncFunction(4, 6);
-console.log(result);
-// module.exports = { someAsyncFunction };
+
+// const result = someAsyncFunction(4, 6);
+// console.log(result);
+module.exports = { someAsyncFunction };
+
+// someAsyncFunction(1, 2).then((data) => console.log("1 =========", data))
+// someAsyncFunction(3, 4).then((data) => console.log("2 =========", data))
