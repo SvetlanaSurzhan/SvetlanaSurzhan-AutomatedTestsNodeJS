@@ -1,4 +1,4 @@
-const { someAsyncFunction } = require("../src/app");
+// const { someAsyncFunction } = require("../src/app");
 const axios = require('axios');
 // // Fizz Buzz task:
 // function fizzBuzz(number) {
@@ -125,12 +125,89 @@ const axios = require('axios');
 // // someAsyncFunction(3, 4).then((data) => console.log("2 =========", data))
 
 
-// GET request:
-axios.get('https://www.anapioficeandfire.com/api/characters')
-    .then(function (res) {
-        console.log(res)
+// // GET request:
+// axios.get('https://www.anapioficeandfire.com/api/characters')
+//     .then(function (res) {
+//         console.log(res)
+//     })
+//     .catch(function (error) {
+//         console.log(error)
+//     });
+//  creating new user for ChecklistSL url: https://api.checklistsl.com/api/registration
+// post data for registration new user
+
+// axios({
+//     method: 'post',
+//     url: 'https://api.checklistsl.com/api/registration',
+//     data: {
+//         username: 'test1@gmail.com',
+//         password: 'Test12345',
+//         languages: [
+//             "ru"
+//         ]
+//     }
+// })
+//     .then(function (response) {
+//         console.log(response)
+//     })
+//     .catch(function (error) {
+//         console.log(error)
+//     });
+
+
+// .then((token) => {
+//     axios({
+//         method: 'post',
+//         url: 'https://api.checklistsl.com/api/checklist',
+//         data: {
+//             'name': 'kroger'
+//         },
+//         headers: {
+//             'Authorization': `Basic ${token}`
+//         }
+//     }).then(function (response) {
+//         console.log(response.data)
+//     })
+// })
+
+
+function getToken() {
+    return axios({
+        method: 'post',
+        url: 'https://api.checklistsl.com/api/login',
+        data: {
+            username: 'test1@gmail.com',
+            password: 'Test12345',
+            languages: [
+                "ru"
+            ]
+        }
     })
-    .catch(function (error) {
-        console.log(error)
-    });
-// POST request:
+        .then(function (response) {
+            const newToken = response.data.token
+            // return newToken
+        })
+}
+// username should be email and for languages use 'ru' - specific abbreviations. I created user via https://api.checklistsl.com/api/#/
+// modified: "2022-11-15T03:00:23.118Z"
+// token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxQGdtYWlsLmNvbSIsImlkIjoiNjM3MzAwYzdmOTFjMWU5OTdlYTA4M2YwIiwiaWF0IjoxNjY4NDgxODQ4LCJleHAiOjE2Njg1MjUwNDh9.62CTo-d8V-t4KD4-hE4vHvr5k5-Ya9VemI3SIMnz52g"
+// username: "test1@gmail.com"
+getToken().then((token) => {
+    axios({
+        method: 'post',
+        url: 'https://api.checklistsl.com/api/checklist',
+        data: {
+            'name': 'kroger'
+        },
+        headers: {
+            'Authorization': `Basic ${token}`
+        }
+    })
+        .then(function (response) {
+            console.log(response.data)
+        })
+        .catch(function (error) {
+            console.log(error)
+        });
+})
+
